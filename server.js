@@ -7,8 +7,6 @@ const socket = require('socket.io')
 const io = socket(server)
 const PORT = 8080
 
-// const videoSocketId
-
 app.get('/', (req, res) => {
   res.send('<h1>Hello world</h1>');
 });
@@ -20,6 +18,10 @@ io.on('connect', socket => {
   socket.on('hi', () => {
     console.log('controls says hi to server')
     io.emit('hiPlayer')
+  })
+
+  socket.on('playerControls', action => {
+    io.emit('playerAction', action)
   })
 
   socket.on('disconnect', () => {

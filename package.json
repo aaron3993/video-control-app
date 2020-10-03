@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/aaron3993/video-sharing-app#readme",
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
     "express": "^4.15.2",
     "socket.io": "^2.3.0"
   }
