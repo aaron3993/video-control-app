@@ -7,6 +7,10 @@ const socket = require('socket.io')
 const io = socket(server)
 const PORT = 8080
 
+app.get('/', (req, res) => {
+  res.send('<h1>Hello world</h1>');
+});
+
 io.on('connection', socket => {
   console.log('client connected')
 })
