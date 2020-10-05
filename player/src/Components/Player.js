@@ -15,6 +15,7 @@ function Player(props) {
     socket.on("playerAction", (action) => {
       if (action === "play") {
         player.playVideo();
+        player.setPlaybackRate(1);
       }
       if (action === "pause") {
         player.pauseVideo();
@@ -25,6 +26,12 @@ function Player(props) {
       if (action === "backward") {
         player.seekTo(player.getCurrentTime() - 10);
       }
+      if (action === "slow") {
+        player.setPlaybackRate(player.getPlaybackRate() - 0.25);
+      }
+      if (action === "fast") {
+        player.setPlaybackRate(player.getPlaybackRate() + 0.25);
+      }
     });
   });
 
@@ -34,7 +41,7 @@ function Player(props) {
       height: "601",
       width: "961",
       videoId: "M7lc1UVf-VE",
-      playerVars: { controls: 0, mute: 1 },
+      playerVars: { controls: 1, mute: 1 },
       events: {
         onReady: onPlayerReady,
       },

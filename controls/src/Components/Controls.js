@@ -5,6 +5,7 @@ import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import PauseIcon from "@material-ui/icons/Pause";
 import Forward10Icon from "@material-ui/icons/Forward10";
 import Replay10Icon from "@material-ui/icons/Replay10";
+import FastForwardIcon from "@material-ui/icons/FastForward";
 
 function Controls(props) {
   const socket = props.socket;
@@ -21,33 +22,51 @@ function Controls(props) {
         onClick={() => {
           handleControls("play");
         }}
-      ><PlayArrowIcon
-      style={{ fontSize: "7rem" }}
-      ></PlayArrowIcon></button>
+      >
+        <PlayArrowIcon style={{ fontSize: "7rem" }}></PlayArrowIcon>
+      </button>
       <button
         className="controls"
         onClick={() => {
           handleControls("pause");
         }}
-      ><PauseIcon
-      style={{ fontSize: "7rem" }}
-      ></PauseIcon></button>
+      >
+        <PauseIcon style={{ fontSize: "7rem" }}></PauseIcon>
+      </button>
       <button
         className="controls"
         onClick={() => {
           handleControls("backward");
         }}
-      ><Replay10Icon
-      style={{ fontSize: "7rem" }}
-      ></Replay10Icon></button>
+      >
+        <Replay10Icon style={{ fontSize: "7rem" }}></Replay10Icon>
+      </button>
       <button
         className="controls"
         onClick={() => {
           handleControls("forward");
         }}
-      ><Forward10Icon
-      style={{ fontSize: "7rem" }}
-      ></Forward10Icon></button>
+      >
+        <Forward10Icon style={{ fontSize: "7rem" }}></Forward10Icon>
+      </button>
+      <button
+        className="controls"
+        onClick={() => {
+          handleControls("slow");
+        }}
+      >
+        <FastForwardIcon
+          style={{ fontSize: "7rem", transform: "scaleX(-1)" }}
+        ></FastForwardIcon>
+      </button>
+      <button
+        className="controls"
+        onClick={() => {
+          handleControls("fast");
+        }}
+      >
+        <FastForwardIcon style={{ fontSize: "7rem" }}></FastForwardIcon>
+      </button>
     </div>
   );
 }
