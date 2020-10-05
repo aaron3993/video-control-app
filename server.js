@@ -13,12 +13,6 @@ app.get('/', (req, res) => {
 
 io.on('connect', socket => {
   console.log('client connected')
-  io.emit('welcome')
-
-  socket.on('hi', () => {
-    console.log('controls says hi to server')
-    io.emit('hiPlayer')
-  })
 
   socket.on('playerControls', action => {
     io.emit('playerAction', action)
