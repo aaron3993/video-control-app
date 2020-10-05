@@ -5,7 +5,6 @@ function Player(props) {
   const socket = props.socket;
 
   useEffect(() => {
-    socket.emit("volume", player.isMuted());
     const tag = document.createElement("script");
     tag.id = "iframe";
     tag.src = "https://www.youtube.com/iframe_api";
@@ -35,11 +34,9 @@ function Player(props) {
       }
       if (action === "unmute") {
         player.unMute();
-        // socket.emit("unmute");
       }
       if (action === "mute") {
         player.mute();
-        // socket.emit("mute");
       }
     });
   });
@@ -50,7 +47,7 @@ function Player(props) {
       height: "601",
       width: "961",
       videoId: "M7lc1UVf-VE",
-      playerVars: { controls: 1, mute: 1 },
+      playerVars: { controls: 1, mute: 0 },
       events: {
         onReady: onPlayerReady,
       },

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Controls.css";
 
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
@@ -10,17 +10,7 @@ import VolumeMuteIcon from "@material-ui/icons/VolumeMute";
 import VolumeOffIcon from "@material-ui/icons/VolumeOff";
 
 function Controls(props) {
-  const [muted, setMuted] = useState(true);
-
   const socket = props.socket;
-
-  // socket.on("muteButton", () => {
-  //   setMuted(true);
-  // });
-
-  // socket.on("unmuteButton", () => {
-  //   setMuted(false);
-  // });
 
   function handleControls(action) {
     socket.emit("playerControls", action);
@@ -37,6 +27,7 @@ function Controls(props) {
       >
         <PlayArrowIcon style={{ fontSize: "7rem" }}></PlayArrowIcon>
       </button>
+
       <button
         className="controls main-controls"
         onClick={() => {
@@ -45,6 +36,7 @@ function Controls(props) {
       >
         <PauseIcon style={{ fontSize: "7rem" }}></PauseIcon>
       </button>
+
       <button
         className="controls back-controls"
         onClick={() => {
@@ -53,6 +45,7 @@ function Controls(props) {
       >
         <Replay10Icon style={{ fontSize: "7rem" }}></Replay10Icon>
       </button>
+
       <button
         className="controls forward-controls"
         onClick={() => {
@@ -61,6 +54,7 @@ function Controls(props) {
       >
         <Forward10Icon style={{ fontSize: "7rem" }}></Forward10Icon>
       </button>
+
       <button
         className="controls back-controls"
         onClick={() => {
@@ -71,6 +65,7 @@ function Controls(props) {
           style={{ fontSize: "7rem", transform: "scaleX(-1)" }}
         ></FastForwardIcon>
       </button>
+
       <button
         className="controls forward-controls"
         onClick={() => {
@@ -79,28 +74,24 @@ function Controls(props) {
       >
         <FastForwardIcon style={{ fontSize: "7rem" }}></FastForwardIcon>
       </button>
-      {!muted && (
-        <button
-          className="controls"
-          onClick={() => {
-            handleControls("mute");
-            setMuted(true);
-          }}
-        >
-          <VolumeMuteIcon style={{ fontSize: "7rem" }}></VolumeMuteIcon>
-        </button>
-      )}
-      {muted && (
-        <button
-          className="control-icons"
-          onClick={() => {
-            handleControls("unmute");
-            setMuted(false);
-          }}
-        >
-          <VolumeOffIcon style={{ fontSize: "7rem" }}></VolumeOffIcon>
-        </button>
-      )}
+
+      <button
+        className="controls"
+        onClick={() => {
+          handleControls("unmute");
+        }}
+      >
+        <VolumeMuteIcon style={{ fontSize: "7rem" }}></VolumeMuteIcon>
+      </button>
+
+      <button
+        className="controls"
+        onClick={() => {
+          handleControls("mute");
+        }}
+      >
+        <VolumeOffIcon style={{ fontSize: "7rem" }}></VolumeOffIcon>
+      </button>
     </div>
   );
 }

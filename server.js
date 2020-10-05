@@ -14,14 +14,6 @@ io.on("connect", (socket) => {
     io.emit("playerAction", action);
   });
 
-  // socket.on("mute", () => {
-  //   io.emit("muteButton");
-  // });
-
-  // socket.on("unmute", () => {
-  //   io.emit("unmuteButton");
-  // });
-
   socket.on("disconnect", () => {
     console.log("user disconnected");
   });
