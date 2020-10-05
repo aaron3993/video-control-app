@@ -1,0 +1,21 @@
+.controls-container {
+  margin: auto;
+  width: 10rem;
+  border: solid rgb(153, 14, 14) 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.controls {
+  color: rgb(153, 14, 14);
+}
+
+.controls:hover {
+  color: rgb(255, 0, 0);
+  cursor: pointer;
+}
+
+.controls:active {
+  transform: scale(0.9);
+}
