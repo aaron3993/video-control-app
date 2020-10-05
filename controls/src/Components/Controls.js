@@ -30,7 +30,7 @@ function Controls(props) {
     <div className="controls-container">
       <div class="signal"></div>
       <button
-        className="controls"
+        className="controls main-controls"
         onClick={() => {
           handleControls("play");
         }}
@@ -38,7 +38,7 @@ function Controls(props) {
         <PlayArrowIcon style={{ fontSize: "7rem" }}></PlayArrowIcon>
       </button>
       <button
-        className="controls"
+        className="controls main-controls"
         onClick={() => {
           handleControls("pause");
         }}
@@ -46,7 +46,7 @@ function Controls(props) {
         <PauseIcon style={{ fontSize: "7rem" }}></PauseIcon>
       </button>
       <button
-        className="controls"
+        className="controls back-controls"
         onClick={() => {
           handleControls("backward");
         }}
@@ -54,7 +54,7 @@ function Controls(props) {
         <Replay10Icon style={{ fontSize: "7rem" }}></Replay10Icon>
       </button>
       <button
-        className="controls"
+        className="controls forward-controls"
         onClick={() => {
           handleControls("forward");
         }}
@@ -62,7 +62,7 @@ function Controls(props) {
         <Forward10Icon style={{ fontSize: "7rem" }}></Forward10Icon>
       </button>
       <button
-        className="controls"
+        className="controls back-controls"
         onClick={() => {
           handleControls("slow");
         }}
@@ -72,7 +72,7 @@ function Controls(props) {
         ></FastForwardIcon>
       </button>
       <button
-        className="controls"
+        className="controls forward-controls"
         onClick={() => {
           handleControls("fast");
         }}

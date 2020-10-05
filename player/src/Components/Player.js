@@ -5,6 +5,7 @@ function Player(props) {
   const socket = props.socket;
 
   useEffect(() => {
+    socket.emit("volume", player.isMuted());
     const tag = document.createElement("script");
     tag.id = "iframe";
     tag.src = "https://www.youtube.com/iframe_api";
