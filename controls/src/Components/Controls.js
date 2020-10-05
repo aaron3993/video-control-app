@@ -15,34 +15,39 @@ function Controls(props) {
 
   return (
     <div className="controls-container">
-      <PlayArrowIcon
+      <div class="signal"></div>
+      <button
         className="controls"
         onClick={() => {
           handleControls("play");
         }}
-        style={{ fontSize: "10rem" }}
-      ></PlayArrowIcon>
-      <PauseIcon
+      ><PlayArrowIcon
+      style={{ fontSize: "7rem" }}
+      ></PlayArrowIcon></button>
+      <button
         className="controls"
         onClick={() => {
           handleControls("pause");
         }}
-        style={{ fontSize: "10rem" }}
-      ></PauseIcon>
-      <Replay10Icon
+      ><PauseIcon
+      style={{ fontSize: "7rem" }}
+      ></PauseIcon></button>
+      <button
         className="controls"
         onClick={() => {
           handleControls("backward");
         }}
-        style={{ fontSize: "10rem" }}
-      ></Replay10Icon>
-      <Forward10Icon
+      ><Replay10Icon
+      style={{ fontSize: "7rem" }}
+      ></Replay10Icon></button>
+      <button
         className="controls"
         onClick={() => {
           handleControls("forward");
         }}
-        style={{ fontSize: "10rem" }}
-      ></Forward10Icon>
+      ><Forward10Icon
+      style={{ fontSize: "7rem" }}
+      ></Forward10Icon></button>
     </div>
   );
 }
