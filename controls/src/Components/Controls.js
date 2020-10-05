@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Controls.css";
 
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
@@ -6,9 +6,21 @@ import PauseIcon from "@material-ui/icons/Pause";
 import Forward10Icon from "@material-ui/icons/Forward10";
 import Replay10Icon from "@material-ui/icons/Replay10";
 import FastForwardIcon from "@material-ui/icons/FastForward";
+import VolumeMuteIcon from "@material-ui/icons/VolumeMute";
+import VolumeOffIcon from "@material-ui/icons/VolumeOff";
 
 function Controls(props) {
+  const [muted, setMuted] = useState(true);
+
   const socket = props.socket;
+
+  // socket.on("muteButton", () => {
+  //   setMuted(true);
+  // });
+
+  // socket.on("unmuteButton", () => {
+  //   setMuted(false);
+  // });
 
   function handleControls(action) {
     socket.emit("playerControls", action);
@@ -67,6 +79,28 @@ function Controls(props) {
       >
         <FastForwardIcon style={{ fontSize: "7rem" }}></FastForwardIcon>
       </button>
+      {!muted && (
+        <button
+          className="controls"
+          onClick={() => {
+            handleControls("mute");
+            setMuted(true);
+          }}
+        >
+          <VolumeMuteIcon style={{ fontSize: "7rem" }}></VolumeMuteIcon>
+        </button>
+      )}
+      {muted && (
+        <button
+          className="control-icons"
+          onClick={() => {
+            handleControls("unmute");
+            setMuted(false);
+          }}
+        >
+          <VolumeOffIcon style={{ fontSize: "7rem" }}></VolumeOffIcon>
+        </button>
+      )}
     </div>
   );
 }

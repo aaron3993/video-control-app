@@ -1,22 +1,30 @@
-const express = require('express')
-const http = require('http')
-const app = express()
+const express = require("express");
+const http = require("http");
+const app = express();
 
-const server = http.createServer(app)
-const socket = require('socket.io')
-const io = socket(server)
-const PORT = 8080
+const server = http.createServer(app);
+const socket = require("socket.io");
+const io = socket(server);
+const PORT = 8080;
 
-io.on('connect', socket => {
-  console.log('client connected')
+io.on("connect", (socket) => {
+  console.log("client connected");
 
-  socket.on('playerControls', action => {
-    io.emit('playerAction', action)
-  })
-
-  socket.on('disconnect', () => {
-    console.log('user disconnected');
+  socket.on("playerControls", (action) => {
+    io.emit("playerAction", action);
   });
-})
 
-server.listen(PORT, () => console.log(`server is running on port ${PORT}`))
+  // socket.on("mute", () => {
+  //   io.emit("muteButton");
+  // });
+
+  // socket.on("unmute", () => {
+  //   io.emit("unmuteButton");
+  // });
+
+  socket.on("disconnect", () => {
+    console.log("user disconnected");
+  });
+});
+
+server.listen(PORT, () => console.log(`server is running on port ${PORT}`));

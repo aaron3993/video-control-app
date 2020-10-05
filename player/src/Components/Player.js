@@ -32,6 +32,14 @@ function Player(props) {
       if (action === "fast") {
         player.setPlaybackRate(player.getPlaybackRate() + 0.25);
       }
+      if (action === "unmute") {
+        player.unMute();
+        // socket.emit("unmute");
+      }
+      if (action === "mute") {
+        player.mute();
+        // socket.emit("mute");
+      }
     });
   });
 
