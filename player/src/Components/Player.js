@@ -34,18 +34,16 @@ function Player(props) {
       height: "601",
       width: "961",
       videoId: "M7lc1UVf-VE",
-      // videoId: "M7lc1UVf-VE?autoplay=1&mute=1&enablejsapi=1",
-      // playerVars: { autoplay: 1, controls: 0 },
+      playerVars: { controls: 0, mute: 1 },
       events: {
-        // onReady: onPlayerReady,
-        // 'onStateChange': onPlayerStateChange
+        onReady: onPlayerReady,
       },
     });
   }
 
-  // function onPlayerReady(event) {
-  //   event.target.playVideo();
-  // }
+  function onPlayerReady(event) {
+    event.target.playVideo();
+  }
 
   return <div id="player"></div>;
 }
