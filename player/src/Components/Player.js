@@ -1,8 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import getYouTubeID from "get-youtube-id";
 import "./Player.css";
 
 function Player(props) {
   const socket = props.socket;
+
+  const [id, setId] = useState("");
 
   useEffect(() => {
     const tag = document.createElement("script");
@@ -46,19 +49,21 @@ function Player(props) {
     player = new window.YT.Player("player", {
       height: "601",
       width: "961",
-      videoId: "_dUTO7zWXzk",
-      playerVars: { controls: 1, mute: 1 },
-      events: {
-        // onReady: onPlayerReady,
-      },
+      videoId: id,
+      playerVars: { controls: 0, mute: 1 },
     });
   }
 
-  // function onPlayerReady(event) {
-  //   event.target.playVideo();
-  // }
+  function handleChange(e) {
+    setId(getYouTubeID(e.target.value));
+  }
 
-  return <div id="player"></div>;
+  return (
+    <>
+      <div id="player"></div>
+      <input type="text" onChange={handleChange} />
+    </>
+  );
 }
 
 export default Player;
