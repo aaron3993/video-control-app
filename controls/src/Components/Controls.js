@@ -20,7 +20,7 @@ function Controls(props) {
     <div className="controls-container">
       <div class="signal"></div>
       <button
-        className="controls main-controls"
+        className="controls"
         onClick={() => {
           handleControls("play");
         }}
@@ -29,7 +29,7 @@ function Controls(props) {
       </button>
 
       <button
-        className="controls main-controls"
+        className="controls"
         onClick={() => {
           handleControls("pause");
         }}
@@ -37,45 +37,49 @@ function Controls(props) {
         <PauseIcon style={{ fontSize: "7rem" }}></PauseIcon>
       </button>
 
-      <button
-        className="controls back-controls"
-        onClick={() => {
-          handleControls("backward");
-        }}
-      >
-        <Replay10Icon style={{ fontSize: "7rem" }}></Replay10Icon>
-      </button>
+      <div className="jump-controls">
+        <button
+          className="controls"
+          onClick={() => {
+            handleControls("backward");
+          }}
+        >
+          <Replay10Icon style={{ fontSize: "7rem" }}></Replay10Icon>
+        </button>
 
-      <button
-        className="controls forward-controls"
-        onClick={() => {
-          handleControls("forward");
-        }}
-      >
-        <Forward10Icon style={{ fontSize: "7rem" }}></Forward10Icon>
-      </button>
+        <button
+          className="controls"
+          onClick={() => {
+            handleControls("forward");
+          }}
+        >
+          <Forward10Icon style={{ fontSize: "7rem" }}></Forward10Icon>
+        </button>
+      </div>
 
-      <button
-        className="controls back-controls"
-        onClick={() => {
-          handleControls("slow");
-        }}
-      >
-        <FastForwardIcon
-          style={{ fontSize: "7rem", transform: "scaleX(-1)" }}
-        ></FastForwardIcon>
-      </button>
+      <div className="speed-controls">
+        <button
+          className="controls"
+          onClick={() => {
+            handleControls("slow");
+          }}
+        >
+          <FastForwardIcon
+            style={{ fontSize: "7rem", transform: "scaleX(-1)" }}
+          ></FastForwardIcon>
+        </button>
 
-      <button
-        className="controls forward-controls"
-        onClick={() => {
-          handleControls("fast");
-        }}
-      >
-        <FastForwardIcon style={{ fontSize: "7rem" }}></FastForwardIcon>
-      </button>
+        <button
+          className="controls"
+          onClick={() => {
+            handleControls("fast");
+          }}
+        >
+          <FastForwardIcon style={{ fontSize: "7rem" }}></FastForwardIcon>
+        </button>
+      </div>
 
-      <button
+      {/* <button
         className="controls"
         onClick={() => {
           handleControls("unmute");
@@ -91,7 +95,7 @@ function Controls(props) {
         }}
       >
         <VolumeOffIcon style={{ fontSize: "7rem" }}></VolumeOffIcon>
-      </button>
+      </button> */}
     </div>
   );
 }

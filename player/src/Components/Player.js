@@ -32,12 +32,12 @@ function Player(props) {
       if (action === "fast") {
         player.setPlaybackRate(player.getPlaybackRate() + 0.25);
       }
-      if (action === "unmute") {
-        player.unMute();
-      }
-      if (action === "mute") {
-        player.mute();
-      }
+      // if (action === "unmute") {
+      //   player.unMute();
+      // }
+      // if (action === "mute") {
+      //   player.mute();
+      // }
     });
   });
 
@@ -46,17 +46,17 @@ function Player(props) {
     player = new window.YT.Player("player", {
       height: "601",
       width: "961",
-      videoId: "M7lc1UVf-VE",
-      playerVars: { controls: 1, mute: 0 },
+      videoId: "_dUTO7zWXzk",
+      playerVars: { controls: 1, mute: 1 },
       events: {
-        onReady: onPlayerReady,
+        // onReady: onPlayerReady,
       },
     });
   }
 
-  function onPlayerReady(event) {
-    event.target.playVideo();
-  }
+  // function onPlayerReady(event) {
+  //   event.target.playVideo();
+  // }
 
   return <div id="player"></div>;
 }
