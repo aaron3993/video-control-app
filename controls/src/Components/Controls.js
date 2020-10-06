@@ -6,8 +6,6 @@ import PauseIcon from "@material-ui/icons/Pause";
 import Forward10Icon from "@material-ui/icons/Forward10";
 import Replay10Icon from "@material-ui/icons/Replay10";
 import FastForwardIcon from "@material-ui/icons/FastForward";
-import VolumeMuteIcon from "@material-ui/icons/VolumeMute";
-import VolumeOffIcon from "@material-ui/icons/VolumeOff";
 
 function Controls(props) {
   const socket = props.socket;
@@ -78,24 +76,6 @@ function Controls(props) {
           <FastForwardIcon style={{ fontSize: "7rem" }}></FastForwardIcon>
         </button>
       </div>
-
-      {/* <button
-        className="controls"
-        onClick={() => {
-          handleControls("unmute");
-        }}
-      >
-        <VolumeMuteIcon style={{ fontSize: "7rem" }}></VolumeMuteIcon>
-      </button>
-
-      <button
-        className="controls"
-        onClick={() => {
-          handleControls("mute");
-        }}
-      >
-        <VolumeOffIcon style={{ fontSize: "7rem" }}></VolumeOffIcon>
-      </button> */}
     </div>
   );
 }

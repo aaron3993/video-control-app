@@ -2,7 +2,7 @@
   position: relative;
   margin: auto;
   width: 18rem;
-  height: 75%;
+  height: 40rem;
   border: solid black 0.5rem;
   border-radius: 1rem;
   background-color: black;
@@ -10,6 +10,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+}
+
+.controls-container:hover {
+  box-shadow: 0 0 2rem rgb(35 173 255);
 }
 
 .signal {
