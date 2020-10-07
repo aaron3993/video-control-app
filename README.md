@@ -9,25 +9,25 @@ Built with two React SPAs connected with each other using websockets through one
 
 ## Setup
 
-1. **Install dependencies for server and both clients**
+**1. Install dependencies for server and both clients**
 
 ```sh
 npm install
 ```
-2. **In root level**
+**2. In root level**
 
 ```sh
 npm start
 ```
 - Open http://localhost:8080/ in the browser
 
-3. **In player folder**
+**3. In player folder**
 ```sh
 npm start
 ```
 - Open http://localhost:3000/ in the browser
 
-4. **In controls folder**
+**4. In controls folder**
 ```sh
 npm start
 ```
