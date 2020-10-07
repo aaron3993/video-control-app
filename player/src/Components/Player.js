@@ -4,37 +4,6 @@ import "./Player.css";
 function Player(props) {
   const socket = props.socket;
 
-  useEffect(() => {
-    const tag = document.createElement("script");
-    tag.id = "iframe";
-    tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName("script")[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    window.onYouTubeIframeAPIReady = loadVideoPlayer;
-
-    socket.on("playerAction", (action) => {
-      if (action === "play") {
-        player.playVideo();
-        player.setPlaybackRate(1);
-      }
-      if (action === "pause") {
-        player.pauseVideo();
-      }
-      if (action === "forward") {
-        player.seekTo(player.getCurrentTime() + 10);
-      }
-      if (action === "backward") {
-        player.seekTo(player.getCurrentTime() - 10);
-      }
-      if (action === "slow") {
-        player.setPlaybackRate(player.getPlaybackRate() - 0.25);
-      }
-      if (action === "fast") {
-        player.setPlaybackRate(player.getPlaybackRate() + 0.25);
-      }
-    });
-  });
-
   let player;
   function loadVideoPlayer() {
     player = new window.YT.Player("player", {
@@ -44,6 +13,39 @@ function Player(props) {
       playerVars: { controls: 1, mute: 1 },
     });
   }
+
+  useEffect(() => {
+    const tag = document.createElement("script");
+    tag.id = "iframe";
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName("script")[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    window.onYouTubeIframeAPIReady = loadVideoPlayer;
+
+    socket.on("playerAction", (action) => {
+      switch (action) {
+        case "play":
+          player.playVideo();
+          player.setPlaybackRate(1);
+          break;
+        case "pause":
+          player.pauseVideo();
+          break;
+        case "forward":
+          player.seekTo(player.getCurrentTime() + 10);
+          break;
+        case "backward":
+          player.seekTo(player.getCurrentTime() - 10);
+          break;
+        case "slow":
+          player.setPlaybackRate(player.getPlaybackRate() - 0.25);
+          break;
+        case "fast":
+          player.setPlaybackRate(player.getPlaybackRate() + 0.25);
+          break;
+      }
+    });
+  });
 
   return <div id="player"></div>;
 }
