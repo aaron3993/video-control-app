@@ -19,14 +19,20 @@ npm install
 ```sh
 npm start
 ```
+Open http://localhost:8080/ in the browser
+
 3. **In player folder**
 ```sh
 npm start
 ```
+Open http://localhost:3000/ in the browser
+
 4. **In controls folder**
 ```sh
 npm start
 ```
+When prompted to open using another port, click Y and open http://localhost:3001/ in the browser
+
 ![Screenshot of the remote control](https://scontent.fybz2-1.fna.fbcdn.net/v/t1.15752-9/121064724_347681196674331_1046075828655160663_n.png?_nc_cat=108&_nc_sid=ae9488&_nc_ohc=7BmfteznzOMAX-DdBb9&_nc_ht=scontent.fybz2-1.fna&oh=153c80d009a1d6caded5f8b6d745579d&oe=5FA18DAE)
 
 ![Gif of app flow](video-control-app.gif)
