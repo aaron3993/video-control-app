@@ -28,3 +28,4 @@ npm start
 npm start
 ```
 ![Screenshot of the remote control](https://scontent.fybz2-1.fna.fbcdn.net/v/t1.15752-9/121064724_347681196674331_1046075828655160663_n.png?_nc_cat=108&_nc_sid=ae9488&_nc_ohc=7BmfteznzOMAX-DdBb9&_nc_ht=scontent.fybz2-1.fna&oh=153c80d009a1d6caded5f8b6d745579d&oe=5FA18DAE)
+![](video-control-app gif)
